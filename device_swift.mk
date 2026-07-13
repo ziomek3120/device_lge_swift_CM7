@@ -186,24 +186,4 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.media.dec.jpeg.memcap=10000000 \
 	persist.sys.use_dithering=1
 
-SWIFT_WITH_GOOGLE := true
 
-ifdef SWIFT_WITH_GOOGLE
-
-    # use all present proprietary apk
-    PRODUCT_COPY_FILES += $(shell find device/lge/swift/prebuilt/googleapps -name '*.apk' \
-	-printf '%p:system/app/%f ')
-
-    # use all present proprietary lib
-    PRODUCT_COPY_FILES += $(shell find device/lge/swift/prebuilt/googleapps -name '*.so' \
-	-printf '%p:system/lib/%f ')
-
-    # use all present proprietary jar
-    PRODUCT_COPY_FILES += $(shell find device/lge/swift/prebuilt/googleapps -name '*.jar' \
-	-printf '%p:system/framework/%f ')
-
-    # use all present proprietary xml (permissions)
-    PRODUCT_COPY_FILES += $(shell find device/lge/swift/prebuilt/googleapps -name '*.xml' \
-	-printf '%p:system/etc/permissions/%f ')
-
-endif
