@@ -1,5 +1,9 @@
-# Put en_US first in the list, to make it default.
-PRODUCT_LOCALES := ru_RU mdpi
+# Configure resource packaging for LG Swift screen density (MDPI)
+PRODUCT_AAPT_CONFIG := normal mdpi
+PRODUCT_AAPT_PREF_CONFIG := mdpi
+
+# Languages
+$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 $(call inherit-product, build/target/product/full_base.mk)
 #$(call inherit-product, build/target/product/full.mk)
